@@ -136,8 +136,7 @@ if [ -z "$PLATPATH" ]; then
 echo 'Please input the path directory of Platypus.py (e.g /usr/local/..)'
 read PLATPATH
 fi 
-
-#python $PLATPATH callVariants --help 
+ 
 echo 'Would you like to add addition options for Platypus? (y/n)'
 while :
 do
