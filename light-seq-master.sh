@@ -3,19 +3,19 @@
 #could potentially modify the options of bwa, such as matching score, mismatch penalty, gap open penalty etc.
 #could let user choose the algorithm type MEM or aln
 echo "Please enter your working directory containing your fasta files"
-read $DATA
+read DATA
 
 echo "Please indicate the full path to your reference genome"
-read $REF
+read REF
 
 echo "Please the path to your bwa file"
-read $BWA
+read BWA
 
 echo "How many cores would you like to use?"
-read $CPU
+read CPU
 
 echo "How many threads would you like to use?"
-read $THR
+read THR
 
 
 echo "select alignment algorithm"
@@ -46,6 +46,7 @@ if [ $? -ne 0 ]
 				exit 1
 		fi
 else
+exit 1
 fi
 
 
@@ -67,6 +68,7 @@ if [ $? -ne 0 ]
 				exit 1
 		fi
 else
+exit 1
 fi
 else 
 echo "please select correct algorithm or mode"
