@@ -127,8 +127,7 @@ for i in $(ls -1 *.sort.bam)
             fi
    done
 
-#!/bin/bash 
-
+####Platypus.py#####
 #Convinient if user has the Platypus.py accessible through PATH
 PLATPATH=$(which Platypus.py)
 
