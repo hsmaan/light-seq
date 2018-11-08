@@ -122,14 +122,16 @@ parallel samtools index {} ::: $(ls -1 *.sort.bam)
 for i in $(ls -1 *.sort.bam)
    do
       printf "$PWD/${i}\n" >> "bamlist"
-           if [ $? -ne 0 ]
-           then 
-                  printf "There is a problem in bam file list"
-                  exit 1
-            fi
    done
+if [ $? -ne 0 ]
+then 
+ 	printf "There is a problem in bam file list"
+ 	exit 1
+fi
 
 ####Platypus.py#####
+echo '#### Now running Platypus.py for variant calling ####'
+
 #Convinient if user has the Platypus.py accessible through PATH
 PLATPATH=$(which Platypus.py)
 
