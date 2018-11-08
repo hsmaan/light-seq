@@ -87,7 +87,7 @@ fi
 #############################################################################
 
 #1. create a log file and echo processes
-exec &> convert.log
+#exec &> convert.log
 echo "processing .sam files using samtools...output will be one temporary bamfile, one indexed bamfile, and one sorted indexed bamfile"
 
 #2. convert SAM to BAM format with "samtools view"
@@ -160,7 +160,7 @@ do
 	esac
 done 
 
-exec &> platypus.log
+#exec &> platypus.log
 
 python $PLATPATH callVariants --bamFiles=bamlist --refFile=$REF --output=output.vcf --nCPU=$CPU $PLATCON
 
