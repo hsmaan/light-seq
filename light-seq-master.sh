@@ -68,6 +68,58 @@ fi
 
 
 
+#!/bin/bash
+
+#############################################################################
+#	       samtools	          samtools               samtools
+# samfile --view--> bamfile --sort--> bamfile.sort --index--> bamfile.sort.idx
+#
+#############################################################################
+
+#1. create a log file and echo processes
+exec &> convert.log
+echo "processing .sam files using samtools...output will be one temporary bamfile, one indexed bamfile, and one sorted indexed bamfile"
+
+#2. convert SAM to BAM format with "samtools view"
+parallel samtools view -b -S {}.sam ">" {}.temp.bam ::: $(ls -1 *.sam | sed 's/.sam//')
+                if [ $? -ne 0 ]
+                then 
+                        printf "There is a problem in the samtools-view step"
+                        exit 1
+                fi
+
+
+#3. sort BAM files with "samtools sort"
+parallel samtools sort {}.temp.bam -o {}.sort.bam ::: $(ls -1 *.temp.bam | sed 's/.temp.bam//')
+                if [ $? -ne 0 ]
+                then 
+                        printf "There is a problem in the samtools-sort step"
+                        exit 1
+                fi
+
+
+#4. indexing BAM files with "samtools index"
+parallel samtools index {} ::: $(ls -1 *.sort.bam)
+                if [ $? -ne 0 ]
+                then 
+                        printf "There is a problem in the samtools-index step"
+                        exit 1
+                fi
+
+
+#5. create a list of BAM files
+
+for i in $(ls -1 *.sort.bam)
+   do
+      printf "$PWD/${i}\n" >> "bamlist"
+           if [ $? -ne 0 ]
+           then 
+                  printf "There is a problem in bam file list"
+                  exit 1
+            fi
+   done
+#!/bin/bash
+
 
 DATA=["BAM files variable"]
 REF=["Ref genome variable"]
@@ -106,49 +158,7 @@ bcftools call -mv $bcfargs variants.bcf > variants.vcf
                                 printf "There is a problem at the bcftools variant calling step"
                                 exit 1
                 fi
-
-
-
-
-DATA=["BAM files variable"]
-REF=["Ref genome variable"]
-OUT=variantcalling
-CPU=["Cores variable"]
-
-mkdir vcresults
-cd vcresults
-
-exec &> samt_var.log
-
-
-
-echo "What arguments would you like to use for samtools mpileup? Seperate your arguments with a space (e.g. -a -b -c)"
-
-read samargs
-
-
-samtools mpileup -g -f $samargs $REF -b $DATA > variants.bcf
-
-	if [ $? -ne 0 ]
-                        then
-                                printf "There is a problem at the samtools_mpileup step"
-                                exit 1
-                fi
-
-
-echo "What arguments would you like to use for bcftools call? Seperate your arguments with a space (e.g. -a -b -c)"
-
-read bcfargs
-
-bcftools call -mv $bcfargs variants.bcf > variants.vcf
-
-	if [ $? -ne 0 ]
-                        then
-                                printf "There is a problem at the bcftools variant calling step"
-                                exit 1
-                fi
-
-
+#!/bin/bash 
 
 #Convinient if user has the Platypus.py accessible through PATH
 PLATPATH=$(which Platypus.py)
