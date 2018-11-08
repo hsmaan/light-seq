@@ -5,8 +5,12 @@
 echo "Please enter your working directory containing your fasta files"
 read DATA
 
-echo "Please indicate the full path to your reference genome"
-read REF
+#If the user already has the bwa in their PATH, it will not ask them to input said path
+BWA=$(which bwa)
+if [ -z '$BWA' ]; then
+	echo "Please the path to your bwa file"
+	read BWA
+fi 
 
 echo "Please the path to your bwa file"
 read BWA
