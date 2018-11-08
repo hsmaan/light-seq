@@ -46,8 +46,6 @@ if [ $? -ne 0 ]
 				exit 1
 		fi
 else
-echo "please select single or pair"
-exit 1
 fi
 
 
@@ -69,11 +67,9 @@ if [ $? -ne 0 ]
 				exit 1
 		fi
 else
-echo "please select single or pair"
-exit 1
 fi
 else 
-echo "please select MEM or aln"
+echo "please select correct algorithm or mode"
 fi 
 
 
