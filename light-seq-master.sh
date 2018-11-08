@@ -157,6 +157,7 @@ do
 	esac
 done 
 
+exec &> platypus.log
 
-#python $PLATPATH callVariants --bamFiles=bamlist --refFile=$REF --output=output.vcf --nCPU=$CPU $PLATCON
+python $PLATPATH callVariants --bamFiles=bamlist --refFile=$REF --output=output.vcf --nCPU=$CPU $PLATCON
 
