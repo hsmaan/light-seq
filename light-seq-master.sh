@@ -2,11 +2,20 @@
 
 #could potentially modify the options of bwa, such as matching score, mismatch penalty, gap open penalty etc.
 #could let user choose the algorithm type MEM or aln
-DATA=/home/rhuang06/Documents/Bioinfor_programming/Assigment2/NGS
-REF=/home/rhuang06/Documents/Bioinfor_programming/Assigment2/refgenome/Gmax_275_v2.0.fa
-BWA=/usr/bin/bwa
-CPU=3
-THR=2
+echo "Please enter your working directory containing your fasta files"
+read $DATA
+
+echo "Please indicate the full path to your reference genome"
+read $REF
+
+echo "Please the path to your bwa file"
+read $BWA
+
+echo "How many cores would you like to use?"
+read $CPU
+
+echo "How many threads would you like to use?"
+read $THR
 
 
 echo "select alignment algorithm"
