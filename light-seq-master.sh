@@ -159,5 +159,5 @@ do
 done 
 
 
-#python $PLATPATH callVariants --bamFiles=$BAMFILES --refFile=$GENOME --output=$VCFNAME.vcf --nCPU=$CPU $PLATCON
+#python $PLATPATH callVariants --bamFiles=bamlist --refFile=$REF --output=output.vcf --nCPU=$CPU $PLATCON
 
