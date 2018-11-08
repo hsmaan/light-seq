@@ -10,13 +10,15 @@ read PLATPATH
 fi 
 
 #python $PLATPATH callVariants --help 
+
+#Asking user for addition parameters that they would like to run with Platypus.py
 echo 'Would you like to add addition options for Platypus? (y/n)'
 while :
 do
 	read PLATOPT
 	case $PLATOPT in
 		y)
-			echo 'Please input the additional options and mind the spacing (e.g --genIndels=TRUE assembleAll=1)'
+			echo 'Please input the additional options and mind the spacing (e.g --genIndels=TRUE --assembleAll=1)'
 			read PLATCON
 			break
 			;;
@@ -28,7 +30,7 @@ do
 			;;
 	esac
 done 
+#echo $PLATCON  #testingstep
 
-
-#python $PLATPATH callVariants --bamFiles=$BAMFILES --refFile=$GENOME --output=$VCFNAME.vcf --nCPU=$CPU $PLATCON
+python $PLATPATH callVariants --bamFiles=$BAMFILES --refFile=$GENOME --output=$VCFNAME.vcf --nCPU=$CPU $PLATCON
 
