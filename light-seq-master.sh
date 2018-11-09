@@ -2,16 +2,16 @@
 
 #could potentially modify the options of bwa, such as matching score, mismatch penalty, gap open penalty etc.
 #could let user choose the algorithm type MEM or aln
-echo "Please enter your working directory containing your fasta files"
+echo "Please enter your working directory containing the fasta files."
 read DATA
 
-echo "Please indicate the full path to your reference genome"
+echo "Please enter the full path to your reference genome."
 read REF
 
 #If the user already has the bwa in their PATH, it will not ask them to input said path
 BWA=$(which bwa)
 if [ -z '$BWA' ]; then
-	echo "Please the path to your bwa file"
+	echo "Please enter the path to bwa"
 	read BWA
 fi 
 
@@ -22,18 +22,18 @@ echo "How many threads would you like to use?"
 read THR
 
 
-echo "select alignment algorithm"
-echo "MEM or aln ?"
+
+echo "Would you like to use the MEM or aln alignment algorithm (Answer as "MEM" or "aln")?"
 read al_selection
 
-echo "single end or paired end"
+echo "Do you have single-end or paired-end reads?"
 read sq_type
 
-echo "any arguments to add? please leave space between each arugments"
+echo "Do you have any arguments to add to the BWA algorithm? (format these as -a -b -c.. etc)"
 read arg
 
 if [ "$al_selection" == "MEM" ];then
-echo "you choose bwa mem"
+echo "You chose the BWA MEM alignment algorithm"
 if [ "$sq_type" == "single" ];then
 cd $DATA
 parallel -j $CPU $BWA mem -t $THR $arg $REF {}.fastq ">" {}.sam ::: $(ls -1 *.fastq | sed 's/.fastq//')
@@ -55,7 +55,7 @@ fi
 
 
 elif [ "$al_selection" == "aln" ];then
-echo "you choose bwa aln"
+echo "You chose the BWA aln alignment algorithm"
 if [ "$sq_type" == "single" ];then
 cd $DATA
 parallel -j $CPU $BWA aln -t $THR $arg $REF {}.fastq ">" {}.sam ::: $(ls -1 *.fastq | sed 's/.fastq//')
@@ -75,7 +75,7 @@ else
 exit 1
 fi
 else 
-echo "please select correct algorithm or mode"
+echo "Please select correct algorithm or mode"
 fi 
 
 
@@ -92,7 +92,7 @@ fi
 
 #1. create a log file and echo processes
 #exec &> convert.log
-echo "processing .sam files using samtools...output will be one temporary bamfile, one indexed bamfile, and one sorted indexed bamfile"
+echo "Processing .sam files using samtools...output will be one temporary bamfile, one indexed bamfile, and one sorted indexed bamfile"
 
 #2. convert SAM to BAM format with "samtools view"
 parallel samtools view -b -S {}.sam ">" {}.temp.bam ::: $(ls -1 *.sam | sed 's/.sam//')
