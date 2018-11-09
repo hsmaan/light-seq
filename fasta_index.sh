@@ -5,17 +5,24 @@ REF=/Users/jacobblamer/My_Data/practice_file/assign_1/light-seq-master/GCF_00005
 ## BWA Index
 ## Output: 5 index files (.fa.amb; .fa.ann; .fa.bwt; .fa.pac; .fa.sa)
 
-echo "Is your reference larger than 2GB? (y/n/na...if unknown, choose na)"
-read REF_SIZE
+## use awk to find size of file
+SIZE=$( ls -l $REF | awk {'print $5'} )
+echo "reference is $SIZE bytes"
 
-if [ $REF == y ] 
-then
-	echo "Indexing with 'is'"
+## use "bwtsw" algorithm if ref size is greater than 2GB
+if [ $SIZE -ge 2000000000 ]
+        then
+        echo "reference is larger than  2GB, using bwtsw to index"
+	bwa index -a bwtsw $REF
+
+## use "is" algorthm if ref size is less than 2GB
+elif [ $SIZE -lt 2000000000 ]
+        then
+        echo "reference is less than 2GB, using 'is' to index"
 	bwa index -a is $REF
 
 else
-	echo "Indexing with 'bwtsw'"
-	bwa index -a bwtsw $REF
+        echo "error in reading file size"
 
 fi
 
