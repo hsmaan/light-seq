@@ -16,7 +16,11 @@ read DATA
 printf "\nPlease enter the full path to your reference genome\n"
 read REF 
 
-##BWA PLACEHOLDER##
+BWA=$(which bwa)
+if [ -z '$BWA' ]; then
+	echo "Please enter the path to bwa"
+	read BWA
+fi 
 
 printf "\nHow many cores would you like to use?\n"
 read CPU
