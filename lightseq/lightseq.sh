@@ -1,5 +1,6 @@
 #!/bin/bash
 
+wd=$(pwd)
 echo -e '\n\033[1mLight-Seq High-Throughput Sequencing Analysis Pipeline- Version 0.1\033[0m'
 
 
@@ -16,11 +17,7 @@ read DATA
 printf "\nPlease enter the full path to your reference genome\n"
 read REF 
 
-BWA=$(which bwa)
-if [ -z '$BWA' ]; then
-	echo "Please enter the path to bwa"
-	read BWA
-fi 
+BWA=bwa 
 
 printf "\nHow many cores would you like to use?\n"
 read CPU
@@ -69,18 +66,23 @@ case $STEP1 in
 	"3")
 	##DEMULTIPLEXING##
 	source ./bin/bwa_align.sh
+	cd "${0%/*}"
 	source ./bin/sam_to_bam.sh
+	cd $wd
 	source ./bin/platypus_vc.sh
 	;;
 
 	"4")
 	source ./bin/bwa_align.sh
+	cd $wd
 	source ./bin/sam_to_bam.sh
+	cd $wd
 	source ./bin/platypus_vc.sh
 	;;
 
 	"5")
 	source ./bin/sam_to_bam.sh
+	cd $wd
 	source ./bin/platypus_vc.sh
 	;;
 	
