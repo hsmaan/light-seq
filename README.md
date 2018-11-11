@@ -10,15 +10,15 @@ Light-Seq will prompt the user to declare the task using the command-line interf
 
 Light-Seq relies on various tools that are assumed to be installed on the user's machine.
 
-[Sabre for demultiplexing] (https://github.com/najoshi/sabre)
+[Sabre for demultiplexing](https://github.com/najoshi/sabre)
 
-[AfterQC for trimming and quality control] (https://github.com/OpenGene/AfterQC)
+[AfterQC for trimming and quality control](https://github.com/OpenGene/AfterQC)
 
-[BWA for reference and read alignment] (https://github.com/lh3/bwa)
+[BWA for reference and read alignment](https://github.com/lh3/bwa)
 
-[Samtools for SAM to BAM conversion] (http://www.htslib.org/)
+[Samtools for SAM to BAM conversion](http://www.htslib.org/)
 
-[Platypus for variant calling] (https://github.com/andyrimmer/Platypus)
+[Platypus for variant calling](https://github.com/andyrimmer/Platypus)
 
 
 ## Installation
