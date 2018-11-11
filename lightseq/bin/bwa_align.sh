@@ -54,7 +54,8 @@ function bwa_align {
 			fi
 	elif [ "$sq_type" == "pair" ];then
 	cd $DATA
-	parallel -j $CPU $BWA aln -t $THR $arg $REF {}_1.fastq {}_2.fastq ">" {}.sam ::: $(ls -1 *_1.fastq | sed 's/_1.fastq//')
+	parallel -j $CPU $BWA aln -t $THR $arg $REF {}.fastq ">" {}.sai ::: $(ls -1 *.fastq | sed 's/.fastq//')
+        parallel -j $CPU $BWA sampe $REF {}_1.sai {}_2.sai {}_1.fastq {}_2.fastq ">" {}.sam ::: $(ls -1 *_1.sai | sed 's/_1.sai//')
 	if [ $? -ne 0 ]
 				then
 					printf There is a problem in the alignment step
