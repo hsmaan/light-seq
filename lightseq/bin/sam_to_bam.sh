@@ -1,4 +1,5 @@
 function sam_to_bam {
+	cd $DATA
 	#1. create a log file and echo processes
 	#exec &> convert.log
 	echo "Processing .sam files using samtools...output will be one temporary bamfile, one indexed bamfile, and one sorted indexed bamfile"

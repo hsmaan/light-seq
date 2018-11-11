@@ -1,5 +1,6 @@
 function platypus_vc {
 	echo '#### Now running Platypus.py for variant calling ####'
+	cd $DATA
 
 	#Convinient if user has the Platypus.py accessible through PATH
 	local PLATPATH=$(which Platypus.py)

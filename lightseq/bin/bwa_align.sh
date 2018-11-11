@@ -30,7 +30,8 @@ function bwa_align {
 					exit 1
 			fi
 	elif [ "$sq_type" == "pair" ];then
-	parallel -j $CPU $BWA mem -t $THR $arg $REF {}_1.fastq {}_2.fastq">" {}.sam ::: $(ls -1 *.fastq | sed 's/.fastq//')
+	cd $DATA
+	parallel -j $CPU $BWA mem -t $THR $arg $REF {}_1.fastq {}_2.fastq ">" {}.sam ::: $(ls -1 *_1.fastq | sed 's/_1.fastq//')
 	if [ $? -ne 0 ]
 				then
 					printf There is a problem in the alignment step
@@ -52,7 +53,8 @@ function bwa_align {
 					exit 1
 			fi
 	elif [ "$sq_type" == "pair" ];then
-	parallel -j $CPU $BWA aln -t $THR $arg $REF {}_1.fastq {}_2.fastq">" {}.sam ::: $(ls -1 *.fastq | sed 's/.fastq//')
+	cd $DATA
+	parallel -j $CPU $BWA aln -t $THR $arg $REF {}_1.fastq {}_2.fastq ">" {}.sam ::: $(ls -1 *_1.fastq | sed 's/_1.fastq//')
 	if [ $? -ne 0 ]
 				then
 					printf There is a problem in the alignment step
