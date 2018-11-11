@@ -22,6 +22,10 @@ function bwa_index {
 	else
         	echo "error in reading file size"
 	fi
+	
+	
+	## Samtools Index
+	samtools faidx $REF
 }
 
 bwa_index 
