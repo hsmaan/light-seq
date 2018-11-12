@@ -8,10 +8,10 @@ printf "\nWelcome to the light-seq DNA sequence analysis pipeline. This pipeline
 
 
 
-printf "To get started, make sure you have the dependancies installed and ready. Also ensure all your files, except for the reference genome, are in one directory.\n\n"
+printf "To get started, make sure you have the dependancies installed and ready. Also ensure all your files (except for the reference genome) are in one directory.\n\n"
 
 
-printf "Please enter your working directory containing all your FASTA and/or downstream files\n"
+printf "Please enter your working directory containing all your FASTQ and/or downstream files\n"
 read DATA
 
 printf "\nPlease enter the full path to your reference genome\n"
@@ -41,7 +41,7 @@ if [ "$REFIND" == "n" ]; then
 
 fi
 
-printf "\nThere are a variety of steps this pipeline can begin from. Please choose one of the following:\n\n 1. I have multiplexed untrimmed FASTA files. \n 2. I have demultiplexed untrimmed FASTA files. \n 3. I have multiplexed trimmed FASTA files. \n 4. I have demultiplexed and trimmed FASTA files.\n 5. I have already done alignment and have SAM files.\n 6. I have done mapping and indexing, and have BAM files. \n\nPlease enter a number. \n"
+printf "\nThere are a variety of steps this pipeline can begin from. Please choose one of the following:\n\n 1. I have multiplexed untrimmed FASTQ files. \n 2. I have demultiplexed untrimmed FASTQ files. \n 3. I have multiplexed trimmed FASTQ files. \n 4. I have demultiplexed and trimmed FASTQ files.\n 5. I have already done alignment and have SAM files.\n 6. I have done mapping and indexing, and have BAM files (located in a file named 'bamlist'). \n\nPlease enter a number. \n"
 
 
 read STEP1
