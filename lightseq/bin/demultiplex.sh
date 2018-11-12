@@ -15,17 +15,21 @@ function demultiplex {
   read BAR
   BARCODE=$BAR
   
-  echo e "\nDo you have single end or paired-end reads?\n?
+  echo -e "\nDo you have single end or paired-end reads?\n?"
   local seq_type
   read seq_type
   
-  if ["seq_type"=="single"] then;
-    $TOOL se -f $DATA -b $BARCODE -u *.fastq
-    
+  if [ "$seq_type" == "single" ];then
+  cd $DATA
+  echo -e "\nPlease enter the path of your fastq file\n"
+  local FILE
+  read FILE 
+  $TOOL se -f $FILE -b $BARCODE -u *.fastq
+  
   ####PLACEHOLDER FOR PAIRED END####
   
   else
-    pass
+  :
   fi
 }
 
