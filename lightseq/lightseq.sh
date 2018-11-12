@@ -50,23 +50,32 @@ read STEP1
 case $STEP1 in 
 
 	"1") 
-	##DEMULTIPLEXING AND TRIMMING##
+	##DEMULTIPLEXING##
+	cd $wd
+	##TRIMMING##
+	cd $wd
 	source ./bin/bwa_align.sh
+	cd $wd
 	source ./bin/sam_to_bam.sh
+	cd $wd
 	source ./bin/platypus_vc.sh
 	;;	
 
 	"2")
 	##TRIMMING##
+	cd $wd
 	source ./bin/bwa_align.sh
+	cd $wd
 	source ./bin/sam_to_bam.sh
+	cd $wd
 	source ./bin/platypus_vc.sh
 	;;
 
 	"3")
 	##DEMULTIPLEXING##
+	cd $wd
 	source ./bin/bwa_align.sh
-	cd "${0%/*}"
+	cd $wd
 	source ./bin/sam_to_bam.sh
 	cd $wd
 	source ./bin/platypus_vc.sh
