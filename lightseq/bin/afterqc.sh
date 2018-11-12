@@ -37,6 +37,8 @@ function afterqc {
 	python $afqcl -f -1 -t -1
 	cd good
 	fi
+	
 }
 
 afterqc
+DATA=$(pwd)
