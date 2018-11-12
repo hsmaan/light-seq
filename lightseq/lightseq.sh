@@ -8,7 +8,7 @@ printf "\nWelcome to the light-seq DNA sequence analysis pipeline. This pipeline
 
 
 
-printf "To get started, make sure you have the dependancies installed and ready. Also ensure all your files (except for the reference genome) are in one directory.\n\n"
+printf "To get started, make sure you have the dependancies installed and ready. Ensure all your FASTA, FASTAQ, or downstream files are in one directory (this will be mthe main working directory). If you are demultiplexing, ensure your barcode FASTA is in a seperate folder. Also ensure your reference genome is in a completely seperate folder. The pipeline will create files in the main working directory, but may also create subdirectories if using AfterQC for trimming.\n\n"
 
 
 printf "Please enter your working directory containing all your FASTQ and/or downstream files\n"
@@ -50,7 +50,7 @@ read STEP1
 case $STEP1 in 
 
 	"1") 
-	##DEMULTIPLEXING##
+	source ./bin/demultiplex.sh
 	cd $wd
 	source ./bin/afterqc.sh
 	cd $wd
@@ -72,7 +72,7 @@ case $STEP1 in
 	;;
 
 	"3")
-	##DEMULTIPLEXING##
+	source ./bin/demultiplex.sh
 	cd $wd
 	source ./bin/bwa_align.sh
 	cd $wd
