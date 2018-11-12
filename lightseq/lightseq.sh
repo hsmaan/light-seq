@@ -52,7 +52,7 @@ case $STEP1 in
 	"1") 
 	##DEMULTIPLEXING##
 	cd $wd
-	##TRIMMING##
+	source ./bin/afterqc.sh
 	cd $wd
 	source ./bin/bwa_align.sh
 	cd $wd
@@ -62,7 +62,7 @@ case $STEP1 in
 	;;	
 
 	"2")
-	##TRIMMING##
+	source ./bin/afterqc.sh
 	cd $wd
 	source ./bin/bwa_align.sh
 	cd $wd
