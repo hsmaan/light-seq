@@ -44,7 +44,7 @@ function bwa_align {
 		echo "You chose the BWA aln alignment algorithm"
 		if [ "$sq_type" == "single" ];then
 			parallel -j $CPU $BWA aln -t $THR $arg $REF {}.fastq ">" {}.sai ::: $(ls -1 *.fastq | sed 's/.fastq//')
-			parallel -j $CPU $BWA sampe $REF {}.sai {}.fastq ">" {}.sam ::: $(ls -1 *.sai | sed 's/.sai//')
+			parallel -j $CPU $BWA samse $REF {}.sai {}.fastq ">" {}.sam ::: $(ls -1 *.sai | sed 's/.sai//')
 			if [ $? -ne 0 ]; then
 				printf There is a problem in the alignment step
 				exit 1
