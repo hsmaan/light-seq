@@ -10,15 +10,15 @@ Light-Seq will prompt the user to declare the task using the command-line interf
 
 Light-Seq relies on various tools that are assumed to be installed on the user's machine.
 
-[Sabre for demultiplexing] (https://github.com/najoshi/sabre)
+[Sabre for demultiplexing](https://github.com/najoshi/sabre)
 
-[AfterQC for trimming and quality control] (https://github.com/OpenGene/AfterQC)
+[AfterQC for trimming and quality control](https://github.com/OpenGene/AfterQC)
 
-[BWA for reference and read alignment] (https://github.com/lh3/bwa)
+[BWA for reference and read alignment](https://github.com/lh3/bwa)
 
-[Samtools for SAM to BAM conversion] (http://www.htslib.org/)
+[Samtools for SAM to BAM conversion](http://www.htslib.org/)
 
-[Platypus for variant calling] (https://github.com/andyrimmer/Platypus)
+[Platypus for variant calling](https://github.com/andyrimmer/Platypus)
 
 
 ## Installation
@@ -32,7 +32,6 @@ git clone https://github.com/hsmaan/light-seq.git
 Change directories and add permissions to the script files.
 
 ```bash
-
 cd light-seq
 chmod +x lightseq.sh
 
@@ -41,5 +40,16 @@ chmod +x *.sh
 ```
 
 ## Usage
+
+Change to back to the light-seq main directory. Ensure you have the paths to all the necessary files and tools used in the pipeline.
+
+Execute the light-seq script using:
+
+```bash
+./light-seq.sh
+```
+The script will have a series of prompts asking for the filepaths, filetypes, and type of analysis the user wants to conduct. In each case, the pipeline should produce a VCF file in the user-specified working directory.
+
+## Troubleshooting
 
 
