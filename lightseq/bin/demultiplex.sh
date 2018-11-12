@@ -1,32 +1,32 @@
 #!\bin\bash
 
-#user input for file, tool and barcode
 
-echo "Where is your fastq file?"
 
-read FASTQ
-DATA=$FASTQ
-echo
-echo "What is your sabre path?"
+function demultiplex {
+ 
+  #user input for tool and barcode
+  echo -e "What is your sabre path?\n"
+  local SABRE
+  read SABRE
+  TOOL=$SABRE
 
-read SABRE
-TOOL=$SABRE
+  echo -e "\nWhat is the path to your barcode sequence?\n"
+  local BAR
+  read BAR
+  BARCODE=$BAR
+  
+  echo e "\nDo you have single end or paired-end reads?\n?
+  local seq_type
+  read seq_type
+  
+  if ["seq_type"=="single"] then;
+    $TOOL se -f $DATA -b $BARCODE -u *.fastq
+    
+  ####PLACEHOLDER FOR PAIRED END####
+  
+  else
+    pass
+  fi
+}
 
-echo
-echo "What is your barcode path?"
-
-read BAR
-BARCODE=$BAR
-
-echo
-echo "New directory called 'NGS' created for your demultiplexed data"
-
-mkdir NGS
-
-cd NGS
-
-#logging
-#exec &> sabre.log
-
-#command to run demultiplex using sabre
-#$TOOL se -f $DATA -b $BARCODE -u *.fastq
+demultiplex
