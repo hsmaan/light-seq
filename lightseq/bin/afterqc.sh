@@ -30,6 +30,7 @@ function afterqc {
 		exit 1
 	fi
 	cd good
+	rename.ul .fq .fastq *.fq
 	fi
 
 	#For paired reads 
@@ -42,6 +43,7 @@ function afterqc {
 		exit 1
 	fi
 	cd good
+	rename.ul .fq .fastq *.fq
 	fi
 	
 }
