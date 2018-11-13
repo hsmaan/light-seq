@@ -51,7 +51,7 @@ Execute the light-seq script using:
 ```
 The script will have a series of prompts asking for the filepaths, filetypes, and type of analysis the user wants to conduct. In each case, the pipeline should produce a VCF file in the user-specified working directory.
 
-## Troubleshooting
+## Troubleshooting FAQ
 
 [1. I'm unable to run the program using ./lightseq.sh](#q1)
 
@@ -59,6 +59,7 @@ The script will have a series of prompts asking for the filepaths, filetypes, an
 
 <a name="q1"></a>
 
+####  Question 1
 Ensure you have given persmissions to the main script and to the scripts in the bin. If you were denied permission try:
 
 ```bash
@@ -66,14 +67,15 @@ sudo chmod +x [script]
 ```
 <a name="q2"></a>
 
-Make sure your directories contain the correct files. When specifying the main working directory, do not link to a certain **file**, but the **directory** containing the files (i.e. /../../fastafiles **NOT** /../../fastafiles/fc2010.fq). When linking the multiplexing adapter, the reference genome, and the bamlist, ensure that you are write the path to the **file** itself. If you are still having issues, check to ensure that your files have the correct extension specified by the prompts. The following table shows the correct files and extensions for each step:
+#### Question 2
+Make sure your directories contain the correct files. When specifying the main working directory, do not link to a certain      **file**, but the **directory** containing the files (i.e. /../../fastafiles **NOT** /../../fastafiles/fc2010.fq). When linking the multiplexing adapter, the reference genome, and the bamlist, ensure that you are write the path to the **file** itself. If you are still having issues, check to ensure that your files have the correct extension specified by the prompts. The following table shows the correct files and extensions for each step:
 
 
-| Pipeline Step        | Filetype           | Extension  |
-| :------------- |:-------------|:-----|
-| Demultiplexing      | Fasta |  |
-| Trimming and QC      | Fasta      | .fastq  |
-| Reference Genome Indexing | Refgenome     | .fa  |
-| BWA Fasta Align | Fasta | .fastq |
-| Samtools SAM to BAM | Sequence Alignment | .sam |
-| Platypus Variant Calling | Binary Alignment | .bam | 
+ | Pipeline Step        | Filetype           | Extension  |
+ | :------------- |:-------------|:-----|
+ | Demultiplexing      | Fasta |  |
+ | Trimming and QC      | Fasta      | .fastq  |
+ | Reference Genome Indexing | Refgenome     | .fa  |
+ | BWA Fasta Align | Fasta | .fastq |
+ | Samtools SAM to BAM | Sequence Alignment | .sam |
+ | Platypus Variant Calling | Binary Alignment | .bam | 
