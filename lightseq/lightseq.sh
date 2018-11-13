@@ -14,20 +14,18 @@ printf "To get started, make sure you have the dependancies installed and ready.
 printf "Please enter your working directory containing all your FASTQ and/or downstream files\n"
 read DATA
 
+printf "\nAre you working with single-end or paired-end reads? (Enter as 'single' or 'paired') If you have SAM or BAM files, just hit enter.\n"
+read sq_type
+
 printf "\nPlease enter the full path to your reference genome\n"
 read REF 
-
-BWA=bwa 
-
+ 
 printf "\nHow many cores would you like to use?\n"
 read CPU
 
 printf "\nHow many threads would you like to use?\n"
 read THR
 
-
-
-printf "\nGreat, we have the path to your files and reference genome.\n\n"
 
 printf "Is your reference genome indexed? (y or n)\n" 
 
