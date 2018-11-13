@@ -33,7 +33,7 @@ function afterqc {
 	cd $DATA
 	rename.ul .fastq _R1.fastq *.fastq
 	#for i in *.fastq; do name="${i%.*}"; mv "$i" "${name}R1${i#$name}"; done #if you're using mac this should help
-	python "$afqcl" -f -1 -t -1
+	pypy "$afqcl" -f -1 -t -1
 	if [ $? -ne 0 ]; then
 		printf "There is a problem in the afterqc trimming step"
 		exit 1
@@ -47,7 +47,7 @@ function afterqc {
 	if [ "$sq_type" == "paired" ];then
 		cd $DATA
 		echo "Please ensure the paired sequences have R1 and R2 in the names respectively"
-		python "$afqcl" -f -1 -t -1
+		pypy "$afqcl" -f -1 -t -1
 		if [ $? -ne 0 ]; then
 			printf "There is a problem in the afterqc trimming step"
 			exit 1
