@@ -22,7 +22,10 @@ Light-Seq relies on various tools that are assumed to be installed on the user's
 
 [GNU Parallel for parallel processing](https://www.gnu.org/software/parallel/)
 
+[PyPy for python speed improvement](https://pypy.org/download.html)
+
 ## Rationale
+
 * Sabre was used for demultiplexing because..
 * AfterQC was used for trimming and quality control..
 * BWA was used for reference genome indexing..
