@@ -18,10 +18,6 @@ function afterqc {
 	local afqcl
 	read afqcl
 
-	echo -e "Are your reads single-end or paired-end? (answer as 'single' or 'paired')\n"
-	local sq_type
-	read sq_type
-
 	#AfterQC requires files to have R1 in the name even if they are single
 	if [ "$sq_type" == "single" ];then
 	cd $DATA
