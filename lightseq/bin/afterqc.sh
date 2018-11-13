@@ -56,8 +56,9 @@ function afterqc {
 	rename.ul .fq .fastq *.fq
 	fi
 
-
-
+	if [ $? -eq 0]; then
+		printf "The trimming step using AfterQC completed successfully.\n" >> main.log
+	fi
 }
 
 
