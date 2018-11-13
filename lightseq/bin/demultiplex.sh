@@ -3,7 +3,9 @@
 
 
 function demultiplex {
- 	#user input for tool and barcode
+ 	cd $DATA
+
+	#user input for tool and barcode
 	echo -e "What is your sabre path?\n"
 	local SABRE
 	read SABRE
@@ -30,10 +32,6 @@ function demultiplex {
 	
 	## remove multiplexed file so it's not processed downstream
  	rm $MULTIPLXD_FILE
-	
-	if [ $? -eq 0]; then
-		printf "The demultiplexing step using Sabre completed successfully.\n" >> main.log
-	fi
 }
 
 demultiplex
