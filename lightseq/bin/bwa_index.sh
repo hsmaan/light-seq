@@ -36,6 +36,10 @@ function bwa_index {
 			printf "There is a problem in the samtools_faidx step"
 			exit 1
 	fi
+
+if [ $? -eq 0]; then
+		printf "The FASTA indexing step step using bwa_index completed successfully.\n" >> main.log
+	fi
 }
 
 bwa_index 
