@@ -46,7 +46,7 @@ Change to back to the light-seq main directory. Ensure you have the paths to all
 Execute the light-seq script using:
 
 ```bash
-./light-seq.sh
+./lightseq.sh
 ```
 The script will have a series of prompts asking for the filepaths, filetypes, and type of analysis the user wants to conduct. In each case, the pipeline should produce a VCF file in the user-specified working directory.
 
