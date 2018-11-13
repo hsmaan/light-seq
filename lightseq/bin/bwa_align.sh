@@ -60,7 +60,7 @@ function bwa_align {
 	fi 
 
 if [ $? -eq 0 ]; then
-		printf "The alignment step using bwa_align completed successfully.\n" >> main.log
+		printf "The alignment step using bwa_align completed successfully.\n" >> $wd/main.log
 	fi
 
 }
