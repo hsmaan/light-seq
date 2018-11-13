@@ -41,7 +41,7 @@ function platypus_vc {
 				exit 1
 	fi
 	
-	if [ $? -eq 0]; then
+	if [ $? -eq 0 ]; then
 		printf "The variant calling step using Platypus completed successfully.\n" >> main.log
 	fi
 }
