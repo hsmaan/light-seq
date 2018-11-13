@@ -22,6 +22,13 @@ Light-Seq relies on various tools that are assumed to be installed on the user's
 
 [GNU Parallel for parallel processing](https://www.gnu.org/software/parallel/)
 
+## Rationale
+* Sabre was used for demultiplexing because..
+* AfterQC was used for trimming and quality control..
+* BWA was used for reference genome indexing..
+* Samtools was used for SAM to BAM conversion..
+* Platypus was used for variant calling..
+
 ## Installation
 
 Clone the repository to your machine using the terminal.
@@ -73,7 +80,7 @@ Make sure your directories contain the correct files. When specifying the main w
 
  | Pipeline Step        | Filetype           | Extension  |
  | :------------- |:-------------|:-----|
- | Demultiplexing      | Fasta |  |
+ | Demultiplexing      | Fasta | .fq  |
  | Trimming and QC      | Fasta      | .fastq  |
  | Reference Genome Indexing | Refgenome     | .fa  |
  | BWA Fasta Align | Fasta | .fastq |
