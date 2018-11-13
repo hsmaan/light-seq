@@ -10,7 +10,8 @@ function afterqc {
 
 	local fqfiles=`ls $DATA *.fq | wc -l`
 	if [ "$fqfiles" != 0 ];then
-	rename.ul .fq .fastq *.fq
+		rename.ul .fq .fastq *.fq
+		#for file in *.fq; do mv "$file" "${file%.fq}.fastq"; done  #for mac users. 
 	fi
 
 	#Obtain path of after.py from user
