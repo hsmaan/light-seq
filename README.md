@@ -1,5 +1,15 @@
 # Light-Seq DNA Sequence Analysis Pipeline
 
+## Status
+```diff
+-Demultiplexing
+-Trimming and Quality Control
++Reference Genome Indexing
++Fasta alignment and indexing
++SAM to BAM conversion
++Variant Calling
+``` 
+
 ## Overview
 
 Light-Seq is a sequencing analysis pipeline that takes in reads in the form of FASTA files (or downstream files) and outputs variant-calling files (VCF). The pipeline can take input at various steps and is quite versatile. It can perform demultiplexing, adapter trimming, reference genome indexing, read alignment, read mapping and indexing, and variant calling. 
