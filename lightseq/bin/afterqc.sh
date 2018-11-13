@@ -60,6 +60,6 @@ function afterqc {
 
 
 afterqc
-DATA="$(pwd)"
+DATA="$PWD"
 
 
