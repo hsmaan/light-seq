@@ -38,7 +38,7 @@ Light-Seq relies on various tools that are assumed to be installed on the user's
 
 ## Rationale
 
-* Sabre was used for demultiplexing because..
+* Sabre was used for demultiplexing because it effectively demultiplexes fastq files into separate files based on their barcode reads. It works on both single-ended and pair-ended reads, and takes gzipped file inputs.
 * AfterQC was used for trimming and quality control..
 * BWA was used for reference genome indexing..
 * Samtools was used for SAM to BAM conversion..
