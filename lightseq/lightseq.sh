@@ -1,6 +1,9 @@
 #!/bin/bash
 
 wd=$(pwd)
+
+touch main.log 
+
 echo -e '\n\033[1mLight-Seq High-Throughput Sequencing Analysis Pipeline- Version 0.1\033[0m'
 
 
