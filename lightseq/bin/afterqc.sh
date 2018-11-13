@@ -1,13 +1,23 @@
 #!/bin/bash
 
+
+
 #Demultiplex a single fastq file into multiple files
+
 #Decided to hold off on this. Was demultiplexing a single fastq into multiple fastq's mentioned as being wanted in the script by the prof? Do we assume we have barcode read fastq files as well? Adds a lot of complexity
+
 #AfterQC is being used for automatic adaptor cutting, trimming and report generation. The folder created named good has the reads that passed. You can replace pypy with python to get it to run on your pc if you do not have pypy installed, but pypy is much faster.
+
+
 
 #Rename any .fq files in the user directory to .fastq for simplicity
 
+
+
 function afterqc {
 
+
+    cd $DATA
 	local fqfiles=`ls $DATA *.fq | wc -l`
 	if [ "$fqfiles" != 0 ];then
 		rename.ul .fq .fastq *.fq
@@ -45,8 +55,14 @@ function afterqc {
 	cd good
 	rename.ul .fq .fastq *.fq
 	fi
-	
+
+
+
 }
+
+
 
 afterqc
 DATA=$(pwd)
+
+
