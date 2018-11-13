@@ -57,7 +57,7 @@ function afterqc {
 		#for i in *.fastq; do name="${i%.*}"; mv "$i" "${name}R1${i#$name}"; done
 	fi
 	
-	if [ $? -eq 0]; then
+	if [ $? -eq 0 ]; then
 		printf "The trimming step using AfterQC completed successfully.\n" >> $wd/main.log
 	fi
 
