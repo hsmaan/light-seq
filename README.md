@@ -38,13 +38,9 @@ Light-Seq relies on various tools that are assumed to be installed on the user's
 
 ## Rationale
 
-Sabre was used for demultiplexing because it effectively demultiplexes fastq files into separate files based on their barcode reads. It works on both single-ended and pair-ended reads, and also takes gzipped file inputs.
 
-AfterQC was used in the pipeline for adaptor cutting, quality control and trimming. AfterQC has many key features and advantages. First the program is built to be compatible with and take advantage of pypy, an alternative implementation of python focusing on a JIT compiler. This results in the program running significantly faster and using less memory than it would running with just python. Second the authors designed the program due to have an ease-of-use not present in alternatives. For example, the program can operate on multiple files without the need of a for loop statement and generates rich quality reports available to read in html in the QC folder. Finally, AfterQC focuses on automation and uses algorithms to identify the appropriate parameters with minimal need for user input. AfterQC can identify adaptors without the need for the user to input them manually and also find the appropriate number of bases to trim from the front and tail. The parameters -f -1 -t -1 specify to use this option.
-
-Reference:
-Chen, S., Huang, T., Zhou, Y., Han, Y., Xu, M., & Gu, J. (2017). AfterQC: automatic filtering, trimming, error removing and quality control for fastq data. BMC Bioinformatics, 18(S3). doi: 10.1186/s12859-017-1469-3
-
+* Sabre was used for demultiplexing because it effectively demultiplexes fastq files into separate files based on their barcode reads. It works on both single-ended and pair-ended reads, and also takes gzipped file inputs.
+* AfterQC was used in the pipeline for adaptor cutting, quality control and trimming. AfterQC has many key features and advantages. The authors designed the program due to have an ease-of-use not present in alternatives. AfterQC can identify adaptors without the need for the user to input them manually and also find the appropriate number of bases to trim from the front and tail. The parameters -f -1 -t -1 specify to use this option.
 * BWA was used for reference genome indexing..
 * Samtools was used for SAM to BAM conversion..
 * Platypus was used as the variant caller due to its specificity when it comes to options and it is efficient and accurate when dealing with high-throughput sequencing data. The user has to add the options appropriate for their analysis when prompted. 
