@@ -23,7 +23,7 @@ function afterqc {
 	if [ "$sq_type" == "single" ];then
 	cd $DATA
 	rename.ul .fastq _R1.fastq *.fastq
-	#for i in *; do name="${i%.*}"; mv "$i" "${name}R1${i#$name}"; done #if you're using mac this should help
+	#for i in *.fastq; do name="${i%.*}"; mv "$i" "${name}R1${i#$name}"; done #if you're using mac this should help
 	python $afqcl -f -1 -t -1
 	if [ $? -ne 0 ]; then
 		printf "There is a problem in the afterqc trimming step"
