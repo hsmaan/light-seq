@@ -79,6 +79,8 @@ The script will have a series of prompts asking for the filepaths, filetypes, an
 
 [2. The program can't find my files and stops prematurely.](#q2)
 
+[3. A certain tool failed and it wasn't a file error.](#q3)
+
 <a name="q1"></a>
 
 ####  Question 1
@@ -101,3 +103,8 @@ Make sure your directories contain the correct files. When specifying the main w
  | BWA Fasta Align | Fasta | .fastq |
  | Samtools SAM to BAM | Sequence Alignment | .sam |
  | Platypus Variant Calling | Binary Alignment | .bam | 
+ 
+<a name="q3"></a>
+
+#### Question 3
+If a certain tool fails even if the correct filetypes and paths are specified, then most likely the documentation for that given tool needs to be consulted. Most of the tools used in Light-Seq have dependancies (such as htslib for Platypus), and the user must ensure that the tool is installed correctly with the right dependancies. If the error persists, please open up an issue on the github page and the Light-Seq team will respond as soon as possible. 
