@@ -43,8 +43,8 @@ function sam_to_bam {
 	 	exit 1
 	fi
 
-if [ $? -eq 0]; then
-		printf "The sam to bam step using sam_to_bam completed successfully.\n" >> main.log
+if [ $? -eq 0 ]; then
+		printf "The sam to bam step using samtools completed successfully.\n" >> main.log
 	fi
 }
 
