@@ -25,7 +25,7 @@ function demultiplex {
   		fi
 		
 	#this code should run under the assumption that the files are name _1 and _2 respectively, not R1 and R2. 
-  	elif ["$sq_type" = "pair"] ; then 
+  	elif ["$sq_type" = "paired"] ; then 
   		$SABRE pe -f $DATA/*_1.fq -r $DATA/*_2.fq -b $BARCODE -u unk1.fq -w unk2.fq 
   	fi
 	
