@@ -35,7 +35,11 @@ function platypus_vc {
 	#exec &> platypus.log
 
 	python $PLATPATH callVariants --bamFiles=bamlist --refFile=$REF --output=output.vcf --nCPU=$CPU $PLATCON
-
+	
+	if [ $? -ne 0 ]; then
+				printf "There is a problem in the platypus variant calling step"
+				exit 1
+	fi
 }
 
 platypus_vc
