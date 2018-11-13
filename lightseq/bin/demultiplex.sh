@@ -3,7 +3,6 @@
 
 
 function demultiplex {
-	cd #DATA
  	#user input for tool and barcode
 	echo -e "What is your sabre path?\n"
 	local SABRE
