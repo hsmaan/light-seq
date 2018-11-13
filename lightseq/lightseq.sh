@@ -26,11 +26,12 @@ read CPU
 printf "\nHow many threads would you like to use?\n"
 read THR
 
+printf "\nPlease ensure you have the correct filetypes for each step.\n Demultiplexing: *.fq\n Trimming: *.fq or *.fastq\n BWA Fasta Indexing: *.fastq\n SAM to BAM Conversion: *.sam\n Variant Calling: *.bam\n\n Press enter to continue.\n"
+read placeholder 
 
 printf "Is your reference genome indexed? (y or n)\n" 
 
 read REFIND
-
 
 
 if [ "$REFIND" == "n" ]; then
