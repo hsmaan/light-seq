@@ -19,7 +19,7 @@ Light-Seq relies on various tools that are assumed to be installed on the user's
 [Samtools for SAM to BAM conversion](http://www.htslib.org/)
 
 [Platypus for variant calling](https://github.com/andyrimmer/Platypus)
-)
+
 [GNU Parallel for parallel processing](https://www.gnu.org/software/parallel/)
 
 ## Installation
