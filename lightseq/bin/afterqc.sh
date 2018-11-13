@@ -20,8 +20,8 @@ function afterqc {
     cd $DATA
 	local fqfiles=`ls $DATA *.fq | wc -l`
 	if [ "$fqfiles" != 0 ];then
-		#rename.ul .fq .fastq *.fq
-		for file in *.fq; do mv "$file" "${file%.fq}.fastq"; done  #for mac users. 
+		rename.ul .fq .fastq *.fq
+		#for file in *.fq; do mv "$file" "${file%.fq}.fastq"; done  #for mac users. 
 	fi
 	#Obtain path of after.py from user
 	echo "Please enter the complete path to after.py for the program AfterQC"
@@ -31,16 +31,16 @@ function afterqc {
 	#AfterQC requires files to have R1 in the name even if they are single
 	if [ "$sq_type" == "single" ];then
 	cd $DATA
-	#rename.ul .fastq _R1.fastq *.fastq
-	for i in *.fastq; do name="${i%.*}"; mv "$i" "${name}R1${i#$name}"; done #if you're using mac this should help
+	rename.ul .fastq _R1.fastq *.fastq
+	#for i in *.fastq; do name="${i%.*}"; mv "$i" "${name}R1${i#$name}"; done #if you're using mac this should help
 	python "$afqcl" -f -1 -t -1
 	if [ $? -ne 0 ]; then
 		printf "There is a problem in the afterqc trimming step"
 		exit 1
 	fi
 	cd good
-	#rename.ul .fq .fastq *.fq
-	for file in *.fq; do mv "$file" "${file%.fq}.fastq"; done
+	rename.ul .fq .fastq *.fq
+	#for file in *.fq; do mv "$file" "${file%.fq}.fastq"; done
 	fi
 
 	#For paired reads 
@@ -53,11 +53,11 @@ function afterqc {
 			exit 1
 		fi
 		cd good
-		#rename.ul .fq .fastq *.fq
-		for i in *.fastq; do name="${i%.*}"; mv "$i" "${name}R1${i#$name}"; done
+		rename.ul .fq .fastq *.fq
+		#for i in *.fastq; do name="${i%.*}"; mv "$i" "${name}R1${i#$name}"; done
 	fi
 	
-	if [ $? -eq 0 ]; then
+	if [ $? -eq 0]; then
 		printf "The trimming step using AfterQC completed successfully.\n" >> main.log
 	fi
 
