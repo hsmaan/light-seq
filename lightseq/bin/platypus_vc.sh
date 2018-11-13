@@ -42,7 +42,7 @@ function platypus_vc {
 	fi
 	
 	if [ $? -eq 0 ]; then
-		printf "The variant calling step using Platypus completed successfully.\n" >> main.log
+		printf "The variant calling step using Platypus completed successfully.\n" >> $wd/main.log
 	fi
 }
 
