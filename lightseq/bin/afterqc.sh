@@ -58,7 +58,7 @@ function afterqc {
 	fi
 	
 	if [ $? -eq 0]; then
-		printf "The trimming step using AfterQC completed successfully.\n" >> main.log
+		printf "The trimming step using AfterQC completed successfully.\n" >> $wd/main.log
 	fi
 
 
