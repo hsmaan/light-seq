@@ -42,6 +42,10 @@ function sam_to_bam {
 	 	printf "There is a problem in bam file list"
 	 	exit 1
 	fi
+
+if [ $? -eq 0]; then
+		printf "The sam to bam step using sam_to_bam completed successfully.\n" >> main.log
+	fi
 }
 
 sam_to_bam
