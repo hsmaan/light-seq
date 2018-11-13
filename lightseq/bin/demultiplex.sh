@@ -17,14 +17,11 @@ function demultiplex {
   read BAR
   BARCODE=$BAR
   
-  echo -e "\nDo you have single end or paired-end reads?\n?"
-  local seq_type
-  read seq_type
   
   MULTIPLXD_FILE=$( ls $DATA/*.fq )
   ##echo $MULTIPLXD_FILE
   
-  if [ $seq_type == "single" ] ;
+  if [ "$sq_type" == "single" ] ;
   then
     $SABRE se -f $DATA/*.fq -b $BARCODE -u unk.fq ;
     	if [ $? -ne 0 ]; then
