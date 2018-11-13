@@ -37,7 +37,7 @@ function bwa_index {
 			exit 1
 	fi
 
-if [ $? -eq 0]; then
+if [ $? -eq 0 ]; then
 		printf "The FASTA indexing step step using bwa_index completed successfully.\n" >> main.log
 	fi
 }
