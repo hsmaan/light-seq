@@ -42,7 +42,7 @@ Light-Seq relies on various tools that are assumed to be installed on the user's
 * AfterQC was used for trimming and quality control..
 * BWA was used for reference genome indexing..
 * Samtools was used for SAM to BAM conversion..
-* Platypus was used for variant calling..
+* Platypus was used as the variant caller due to its specificity when it comes to options and it is efficient and accurate when dealing with high-throughput sequencing data. The user has to add the options appropriate for their analysis when prompted. 
 
 ## Installation
 
