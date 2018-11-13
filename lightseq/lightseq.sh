@@ -51,8 +51,8 @@ case $STEP1 in
 	"1") 
 	source ./bin/demultiplex.sh
 	cd $wd
-	##source ./bin/afterqc.sh
-	source ./bin/cutad_parallel.sh
+	source ./bin/afterqc.sh
+	#source ./bin/cutad_parallel.sh
 	cd $wd
 	source ./bin/bwa_align.sh
 	cd $wd
@@ -62,8 +62,8 @@ case $STEP1 in
 	;;	
 
 	"2")
-	##source ./bin/afterqc.sh
-	source ./bin/cutad_parallel.sh
+	source ./bin/afterqc.sh
+	#source ./bin/cutad_parallel.sh
 	cd $wd
 	source ./bin/bwa_align.sh
 	cd $wd
