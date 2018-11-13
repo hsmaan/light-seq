@@ -1,14 +1,16 @@
-#!\bin\bash
+#!/bin/bash
 
 
 
 function demultiplex {
+
+  cd #DATA
  
   #user input for tool and barcode
   echo -e "What is your sabre path?\n"
   local SABRE
   read SABRE
-  TOOL=$SABRE
+
 
   echo -e "\nWhat is the path to your barcode sequence?\n"
   local BAR
@@ -19,18 +21,16 @@ function demultiplex {
   local seq_type
   read seq_type
   
-  if [ "$seq_type" == "single" ];then
-  cd $DATA
-  echo -e "\nPlease enter the path of your fastq file\n"
-  local FILE
-  read FILE 
-  $TOOL se -f $FILE -b $BARCODE -u *.fastq
+  MULTIPLXD_FILE=$( ls $DATA/*.fq )
+  ##echo $MULTIPLXD_FILE
   
-  ####PLACEHOLDER FOR PAIRED END####
-  
-  else
-  :
+  if [ $seq_type == "single" ] ;
+  then
+    $SABRE se -f $DATA/*.fq -b $BARCODE -u unk.fq ;
   fi
+
+  ## remove multiplexed file so it's not processed downstream
+  rm $MULTIPLXD_FILE
 }
 
 demultiplex
