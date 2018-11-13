@@ -19,7 +19,8 @@ Light-Seq relies on various tools that are assumed to be installed on the user's
 [Samtools for SAM to BAM conversion](http://www.htslib.org/)
 
 [Platypus for variant calling](https://github.com/andyrimmer/Platypus)
-
+)
+[GNU Parallel for parallel processing](https://www.gnu.org/software/parallel/)
 
 ## Installation
 
@@ -52,4 +53,13 @@ The script will have a series of prompts asking for the filepaths, filetypes, an
 
 ## Troubleshooting
 
+[1. I'm unable to run the program using ./lightseq.sh](#q1)
+
+<a name="q1"></a>
+
+Ensure you have given persmissions to the main script and to the scripts in the bin. If you were denied permission try:
+
+```bash
+sudo chmod +x [script]
+```
 
