@@ -59,7 +59,7 @@ function bwa_align {
 		echo "Please select correct algorithm or mode"
 	fi 
 
-if [ $? -eq 0]; then
+if [ $? -eq 0 ]; then
 		printf "The alignment step using bwa_align completed successfully.\n" >> main.log
 	fi
 
