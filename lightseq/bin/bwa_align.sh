@@ -11,10 +11,6 @@ function bwa_align {
 	local al_selection
 	read al_selection
 
-	echo "Do you have single-end or paired-end reads?"
-	local sq_type
-	read sq_type
-
 	echo "Do you have any arguments to add to the BWA algorithm? (format these as -a -b -c.. etc)"
 	local arg
 	read arg
