@@ -27,6 +27,10 @@ function demultiplex {
   if [ $seq_type == "single" ] ;
   then
     $SABRE se -f $DATA/*.fq -b $BARCODE -u unk.fq ;
+    if [ $? -ne 0 ]; then
+				printf "There is a problem in the sabre demultiplexing step"
+				exit 1
+		fi
   fi
 
   ## remove multiplexed file so it's not processed downstream
