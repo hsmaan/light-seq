@@ -34,7 +34,7 @@ function demultiplex {
 	mkdir oldfasta
  	mv $MULTIPLXD_FILE oldfasta
 	if [ $? -eq 0 ]; then
-		printf "The demultiplexing step using sabre completed successfully.\n" >> main.log
+		printf "The demultiplexing step using sabre completed successfully.\n" >> $wd/main.log
 	fi
 }
 
