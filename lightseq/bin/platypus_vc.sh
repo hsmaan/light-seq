@@ -40,6 +40,10 @@ function platypus_vc {
 				printf "There is a problem in the platypus variant calling step"
 				exit 1
 	fi
+	
+	if [ $? -eq 0]; then
+		printf "The variant calling step using Platypus completed successfully.\n" >> main.log
+	fi
 }
 
 platypus_vc
