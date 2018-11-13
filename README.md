@@ -1,14 +1,16 @@
 # Light-Seq DNA Sequence Analysis Pipeline
 
 ## Status
+
 ```diff
--Demultiplexing
--Trimming and Quality Control
-+Reference Genome Indexing
-+Fasta alignment and indexing
-+SAM to BAM conversion
-+Variant Calling
+-Demultiplexing (Offline)
+-Trimming and Quality Control (Offline)
++Reference Genome Indexing (Online)
++Fasta alignment and indexing (Online)
++SAM to BAM conversion (Online)
++Variant Calling (Online)
 ``` 
+
 
 ## Overview
 
