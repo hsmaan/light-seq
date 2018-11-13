@@ -44,7 +44,7 @@ function sam_to_bam {
 	fi
 
 if [ $? -eq 0 ]; then
-		printf "The sam to bam step using samtools completed successfully.\n" >> main.log
+		printf "The sam to bam step using samtools completed successfully.\n" >> $wd/main.log
 	fi
 }
 
