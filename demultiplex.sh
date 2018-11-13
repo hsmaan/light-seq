@@ -4,33 +4,33 @@
 
 function demultiplex {
 
-  cd $DATA
- 
-  #user input for tool and barcode
-  echo -e "What is your sabre path?\n"
-  local SABRE
-  read SABRE
+ 	cd $DATA
+ 	local SABRE=$(which sabre)
+	
+	if [ -z "$SABRE" ]: then
+ 	#user input for tool and barcode
+ 		echo -e "What is your sabre path?\n"
+ 		read SABRE
 
-  echo -e "\nWhat is the path to your barcode sequence?\n"
-  local BAR
-  read BAR
-  BARCODE=$BAR
+	echo -e "\nWhat is the path to your barcode sequence?\n"
+ 	local BAR
+ 	read BAR
+ 	BARCODE=$BAR
   
-  echo e "\nDo you have single end or paired-end reads?\n?"
-  local seq_type
-  read seq_type
-  echo seq_type
+  	echo e "\nDo you have single end or paired-end reads?\n?"
+  	local seq_type
+  	read seq_type
+  	echo seq_type
  
-  MULTIPLXD_FILE=$( ls $DATA/*.fq )
-  ##echo $MULTIPLXD_FILE	
+  	MULTIPLXD_FILE=$( ls $DATA/*.fq )
+  	##echo $MULTIPLXD_FILE	
 
-  if [ $seq_type  == "single" ] ; 
-  then
-	 $SABRE se -f $DATA/*.fq -b $BARCODE -u unk.fq ;
-  fi
+  	if [ $seq_type  == "single" ] ; then
+		$SABRE se -f $DATA/*.fq -b $BARCODE -u unk.fq ;
+  	fi
 
-  ## remove multiplexed file so it's not processed downstream
-  rm $MULTIPLXD_FILE
+ 	## remove multiplexed file so it's not processed downstream
+  	rm $MULTIPLXD_FILE
 
   
 }
