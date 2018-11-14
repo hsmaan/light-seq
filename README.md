@@ -3,12 +3,12 @@
 ## Status
 
 ```diff
--Demultiplexing (Offline)
--Trimming and Quality Control (Offline)
-+Reference Genome Indexing (Online)
-+Fasta alignment and indexing (Online)
-+SAM to BAM conversion (Online)
-+Variant Calling (Online)
+-Demultiplexing (Working)
+-Trimming and Quality Control (Working)
++Reference Genome Indexing (Working)
++Fasta alignment and indexing (Working)
++SAM to BAM conversion (Working)
++Variant Calling (Working)
 ``` 
 
 
