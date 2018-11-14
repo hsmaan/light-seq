@@ -41,7 +41,7 @@ Light-Seq relies on various tools that are assumed to be installed on the user's
 
 * Sabre was used for demultiplexing because it effectively demultiplexes fastq files into separate files based on their barcode reads. It works on both single-ended and pair-ended reads, and also takes gzipped file inputs.
 * AfterQC was used in the pipeline for adaptor cutting, quality control and trimming. Rich quality reports are genrated in the QC folder and by running with pypy, the tool runs significantly faster and uses less memory than running with python. AfterQC can identify adaptors without the need for the user to input them manually and use algorithims to determine the appropriate number of bases to trim from the front and tail. The parameters -f -1 -t -1 specify to use this option.
-* BWA was used for reference genome indexing..
+* BWA was used for reference genome indexing. BWA is a fast and accurate software package for mapping low-divergent sequences to a large reference genome. This pipeline contains two algorithms (BWA-MEM and BWA-backtrack) from BWA package. BWA-MEM (bwa mem) is one of the fastest and most accurate mapping algorithm for sequence from 70bp to  1Mpb, and BWA-backtrack (bwa aln) can have better performance than BWA-MEM for sequence below 70pb. However, BWA-MEM has better performance than BWA-blacktrack for sequence from 70bp to 100pb. 
 * Samtools was used for SAM to BAM conversion..
 * Platypus was used as the variant caller due to its specificity when it comes to options and it is efficient and accurate when dealing with high-throughput sequencing data. The user has to add the options appropriate for their analysis when prompted. 
 
