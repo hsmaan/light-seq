@@ -110,5 +110,15 @@ Make sure your directories contain the correct files. When specifying the main w
 #### Question 3
 If a certain tool fails even if the correct filetypes and paths are specified, then most likely the documentation for that given tool needs to be consulted. Most of the tools used in Light-Seq have dependancies (such as htslib for Platypus), and the user must ensure that the tool is installed correctly with the right dependancies. If the error persists, please open up an issue on the github page and the Light-Seq team will respond as soon as possible.
 
-Reference:
+## References:
+
 Chen, S., Huang, T., Zhou, Y., Han, Y., Xu, M., & Gu, J. (2017). AfterQC: automatic filtering, trimming, error removing and quality control for fastq data. BMC Bioinformatics, 18(S3). doi: 10.1186/s12859-017-1469-3
+
+Kevin Spiteri, Ramesh Sitaraman, and Daniel Sparacio. 2018. From Theory to Practice: Improving Bitrate Adaptation in the DASH Reference Player. In Proceedings of the 9th International Conference on Multimedia Systems. ACM.
+
+Li H. and Durbin R. (2009) Fast and accurate short read alignment with Burrows-Wheeler transform. Bioinformatics, 25, 1754-1760. [PMID: 19451168]. (if you use the BWA-backtrack algorithm)
+
+Li, H., Handsaker, B., Wysoker, A., Fennell, T., Ruan, J., Homer, N., Marth, G., Abecasis, G., Durbin, R., 1000 Genome Project Data Processing Subgroup (2009). The Sequence Alignment/Map format and SAMtools. Bioinformatics (Oxford, England), 25(16), 2078-9. 
+
+Rimmer, A., Phan, H., Mathieson, I., Iqbal, Z., Twigg, S. R. F., Consortium, W., … Lunter, G. (2014). Integrating mapping-, assembly- and haplotype-based approaches for calling variants in clinical sequencing applications. Nature Genetics, 46, 912. Retrieved from https://doi.org/10.1038/ng.3036
+
