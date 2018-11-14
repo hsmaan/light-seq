@@ -5,10 +5,13 @@
 function demultiplex {
  	cd $DATA
 
-	#user input for tool and barcode
-	echo -e "What is your sabre path?\n"
-	local SABRE
-	read SABRE
+ 	local SABRE=$(which sabre)
+	
+	if [ -z "$SABRE" ]: then
+ 	#user input for tool and barcode
+ 		echo -e "What is your sabre path?\n"
+ 		read SABRE
+
 	
 	echo -e "\nWhat is the path to your barcode sequence?\n"
 	local BAR
