@@ -72,7 +72,7 @@ Execute the light-seq script using:
 ```bash
 ./lightseq.sh
 ```
-The script will have a series of prompts asking for the filepaths, filetypes, and type of analysis the user wants to conduct. In each case, the pipeline should produce a VCF file in the user-specified working directory.
+The script will have a series of prompts asking for the filepaths, filetypes, and type of analysis the user wants to conduct. In each case, the pipeline should produce a VCF file in the user-specified working directory, except in the case where adapter trimming is performed, then the resulting VCF file will be in the 'good' folder within the user-specified working directory.
 
 ## Troubleshooting FAQ
 
