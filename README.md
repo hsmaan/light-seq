@@ -40,7 +40,7 @@ Light-Seq relies on various tools that are assumed to be installed on the user's
 
 
 * Sabre was used for demultiplexing because it effectively demultiplexes fastq files into separate files based on their barcode reads. It works on both single-ended and pair-ended reads, and also takes gzipped file inputs.
-* AfterQC was used in the pipeline for adaptor cutting, quality control and trimming. Rich quality reports are genrated in the QC folder and by running with pypy, the tool runs significantly faster and uses less memory than running with python. AfterQC can identify adaptors without the need for the user to input them manually and use algorithims to determine the appropriate number of bases to trim from the front and tail. The parameters -f -1 -t -1 specify to use this option.
+* AfterQC was used in the pipeline for adaptor cutting, quality control and trimming. Rich quality reports are genrated in the QC folder and by running with pypy, the tool runs significantly faster and uses less memory than running with python. AfterQC can identify adaptors without the need for the user to input them manually and uses algorithims to determine the appropriate number of bases to trim from the front and tail. The parameters -f -1 -t -1 specify the use of these options.
 * BWA was used for reference genome indexing. BWA is a fast and accurate software package for mapping low-divergent sequences to a large reference genome. This pipeline contains two algorithms (BWA-MEM and BWA-backtrack) from BWA package. BWA-MEM (bwa mem) is one of the fastest and most accurate mapping algorithm for sequence from 70bp to  1Mpb, and BWA-backtrack (bwa aln) can have better performance than BWA-MEM for sequence below 70pb. However, BWA-MEM has better performance than BWA-blacktrack for sequence from 70bp to 100pb. 
 * Samtools was used for SAM to BAM conversion..
 * Platypus was used as the variant caller due to its specificity when it comes to options and it is efficient and accurate when dealing with high-throughput sequencing data. The user has to add the options appropriate for their analysis when prompted. 
@@ -112,13 +112,12 @@ If a certain tool fails even if the correct filetypes and paths are specified, t
 
 ## References:
 
-Chen, S., Huang, T., Zhou, Y., Han, Y., Xu, M., & Gu, J. (2017). AfterQC: automatic filtering, trimming, error removing and quality control for fastq data. BMC Bioinformatics, 18(S3). doi: 10.1186/s12859-017-1469-3
+Chen S, Huang T, Zhou Y, Han Y, Xu M, Gu J. AfterQC: automatic filtering, trimming, error removing and quality control for fastq data. BMC bioinformatics. 2017;18(Suppl 3):80-.
 
 Kevin Spiteri, Ramesh Sitaraman, and Daniel Sparacio. 2018. From Theory to Practice: Improving Bitrate Adaptation in the DASH Reference Player. In Proceedings of the 9th International Conference on Multimedia Systems. ACM.
 
-Li H. and Durbin R. (2009) Fast and accurate short read alignment with Burrows-Wheeler transform. Bioinformatics, 25, 1754-1760. [PMID: 19451168]. 
+Li H, Durbin R. Fast and accurate short read alignment with Burrows-Wheeler transform. Bioinformatics (Oxford, England). 2009;25(14):1754-60.
 
-Li, H., Handsaker, B., Wysoker, A., Fennell, T., Ruan, J., Homer, N., Marth, G., Abecasis, G., Durbin, R., 1000 Genome Project Data Processing Subgroup (2009). The Sequence Alignment/Map format and SAMtools. Bioinformatics (Oxford, England), 25(16), 2078-9. 
+Li H, Handsaker B, Wysoker A, Fennell T, Ruan J, Homer N, et al. The Sequence Alignment/Map format and SAMtools. Bioinformatics (Oxford, England). 2009;25(16):2078-9.
 
-Rimmer, A., Phan, H., Mathieson, I., Iqbal, Z., Twigg, S. R. F., Consortium, W., … Lunter, G. (2014). Integrating mapping-, assembly- and haplotype-based approaches for calling variants in clinical sequencing applications. Nature Genetics, 46, 912. 
-
+Rimmer A, Phan H, Mathieson I, Iqbal Z, Twigg SRF, Consortium WGS, et al. Integrating mapping-, assembly- and haplotype-based approaches for calling variants in clinical sequencing applications. Nature Genetics. 2014;46:912.
