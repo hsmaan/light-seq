@@ -84,7 +84,7 @@ The script will have a series of prompts asking for the filepaths, filetypes, an
 
 <a name="q1"></a>
 
-###  __Question 1__
+### Question 1
 Ensure you have given persmissions to the main script and to the scripts in the bin. If you were denied permission try:
 
 ```bash
@@ -92,7 +92,7 @@ sudo chmod +x [script]
 ```
 <a name="q2"></a>
 
-### __Question 2__
+### Question 2
 Make sure your directories contain the correct files. When specifying the main working directory, do not link to a certain      **file**, but the **directory** containing the files (i.e. /../../fastafiles **NOT** /../../fastafiles/fc2010.fq). When linking the multiplexing adapter, the reference genome, and the bamlist, ensure that you are write the path to the **file** itself. If you are still having issues, check to ensure that your files have the correct extension specified by the prompts. The following table shows the correct files and extensions for each step:
 
 
@@ -107,7 +107,7 @@ Make sure your directories contain the correct files. When specifying the main w
  
 <a name="q3"></a>
 
-### __Question 3__
+### Question 3
 If a certain tool fails even if the correct filetypes and paths are specified, then most likely the documentation for that given tool needs to be consulted. Most of the tools used in Light-Seq have dependancies (such as htslib for Platypus), and the user must ensure that the tool is installed correctly with the right dependancies. If the error persists, please open up an issue on the github page and the Light-Seq team will respond as soon as possible.
 
 ## References:
