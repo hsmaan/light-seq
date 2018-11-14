@@ -2,13 +2,11 @@
 
 
 
-#Demultiplex a single fastq file into multiple files
-
 #AfterQC is being used for automatic adaptor cutting, trimming and report generation. The folder created named good has the reads that passed. You can replace pypy with python to get it to run on your pc if you do not have pypy installed, but pypy is much faster.
 
 
 
-#Rename any .fq files in the user directory to .fastq for simplicity
+#This function will rename any .fq files in the user directory to .fastq for simplicity. Then it will run AfterQC to cut adaptors and trim reads using the AfterQC's automation algorithims. Quality reports are generated in the QC folder, please review these.
 
 
 
