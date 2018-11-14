@@ -11,7 +11,7 @@ function demultiplex {
  	#user input for tool and barcode
  		echo -e "What is your sabre path?\n"
  		read SABRE
-
+	fi
 	
 	echo -e "\nWhat is the path to your barcode sequence?\n"
 	local BAR
