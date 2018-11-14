@@ -3,8 +3,8 @@
 ## Status
 
 ```diff
--Demultiplexing (Working)
--Trimming and Quality Control (Working)
++Demultiplexing (Working)
++Trimming and Quality Control (Working)
 +Reference Genome Indexing (Working)
 +Fasta alignment and indexing (Working)
 +SAM to BAM conversion (Working)
