@@ -7,7 +7,7 @@ function demultiplex {
 
  	local SABRE=$(which sabre)
 	
-	if [ -z '$SABRE' ]: then
+	if [ -z '$SABRE' ]; then
  	#user input for tool and barcode
  		echo -e "What is your sabre path?\n"
  		read SABRE
