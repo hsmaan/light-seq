@@ -1,4 +1,5 @@
 function sam_to_bam {
+	cd $DATA
 	#1. create a log file and echo processes
 	#exec &> convert.log
 	echo "Processing .sam files using samtools...output will be one temporary bamfile, one indexed bamfile, and one sorted indexed bamfile"
@@ -40,6 +41,10 @@ function sam_to_bam {
 	then 
 	 	printf "There is a problem in bam file list"
 	 	exit 1
+	fi
+
+if [ $? -eq 0 ]; then
+		printf "The sam to bam step using samtools completed successfully.\n" >> $wd/main.log
 	fi
 }
 

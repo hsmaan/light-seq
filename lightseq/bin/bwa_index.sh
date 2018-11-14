@@ -12,15 +12,33 @@ function bwa_index {
         	then
         		echo "reference is larger than  2GB, using bwtsw to index"
 		bwa index -a bwtsw $REF
-
+		if [ $? -ne 0 ]; then
+				printf "There is a problem in the bwa_index step"
+				exit 1
+		fi
 	## use "is" algorthm if ref size is less than 2GB
 	elif [ $SIZE -lt 2000000000 ]
         	then
         		echo "reference is less than 2GB, using 'is' to index"
 	        bwa index -a is $REF
-
+		if [ $? -ne 0 ]; then
+				printf "There is a problem in the bwa_index step"
+				exit 1
+		fi
 	else
         	echo "error in reading file size"
+	fi
+	
+	
+	## Samtools Index
+	samtools faidx $REF
+	if [ $? -ne 0 ]; then
+			printf "There is a problem in the samtools_faidx step"
+			exit 1
+	fi
+
+if [ $? -eq 0 ]; then
+		printf "The FASTA indexing step step using bwa_index completed successfully.\n" >> $wd/main.log
 	fi
 }
 

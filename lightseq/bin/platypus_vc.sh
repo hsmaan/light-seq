@@ -1,5 +1,6 @@
 function platypus_vc {
 	echo '#### Now running Platypus.py for variant calling ####'
+	cd $DATA
 
 	#Convinient if user has the Platypus.py accessible through PATH
 	local PLATPATH=$(which Platypus.py)
@@ -34,7 +35,15 @@ function platypus_vc {
 	#exec &> platypus.log
 
 	python $PLATPATH callVariants --bamFiles=bamlist --refFile=$REF --output=output.vcf --nCPU=$CPU $PLATCON
-
+	
+	if [ $? -ne 0 ]; then
+				printf "There is a problem in the platypus variant calling step"
+				exit 1
+	fi
+	
+	if [ $? -eq 0 ]; then
+		printf "The variant calling step using Platypus completed successfully.\n" >> $wd/main.log
+	fi
 }
 
 platypus_vc
