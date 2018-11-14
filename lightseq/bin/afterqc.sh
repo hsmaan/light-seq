@@ -6,7 +6,7 @@
 
 
 
-#This function will rename any .fq files in the user directory to .fastq for simplicity. Then it will run AfterQC to cut adaptors and trim reads using AfterQC's automation algorithims. Quality reports are generated in the QC folder, please review these.
+#This function will rename any .fq files in the user directory to .fastq for simplicity. Then it will run AfterQC to cut adaptors and trim reads using AfterQC's automation algorithims, the parameters used specify this. Reads with that pass are placed in the good folder. Quality reports are generated in the QC folder, please review these.
 
 
 
