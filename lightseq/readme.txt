@@ -27,15 +27,15 @@ Light-Seq relies on various tools that are assumed to be installed on the user's
 
 -Clone the repository to your machine using the terminal.
 
-	git clone https://github.com/hsmaan/light-seq.git
+   git clone https://github.com/hsmaan/light-seq.git
 
 -Change directories and add permissions to the script files.
 
-	cd light-seq
-	chmod +x lightseq.sh
+   cd light-seq
+   chmod +x lightseq.sh
 
-	cd bin
-	chmod +x *.sh
+   cd bin
+   chmod +x *.sh
 
 ---Usage
 
@@ -43,7 +43,7 @@ Change to back to the light-seq main directory. Ensure you have the paths to all
 
 Execute the light-seq script using:
 
-	./lightseq.sh
+   ./lightseq.sh
 
 The script will have a series of prompts asking for the filepaths, filetypes, and type of analysis the user wants to conduct. In each case, the pipeline should produce a VCF file in the user-specified working directory, except in the case where adapter trimming is performed, then the resulting VCF file will be in the 'good' folder within the user-specified working directory.
 
@@ -59,7 +59,7 @@ The script will have a series of prompts asking for the filepaths, filetypes, an
 
 Ensure you have given persmissions to the main script and to the scripts in the bin. If you were denied permission try:
 
-sudo chmod +x [script]
+   sudo chmod +x [script]
 
 -Question 2
 
@@ -69,7 +69,7 @@ Make sure your directories contain the correct files. When specifying the main w
 Demultiplexing 			Fasta 			.fq
 Trimming and QC 		Fasta 			.fastq
 Reference Genome Indexing 	Refgenome 		.fa
-BWA Fasta Align 		Fasta 	.fastq
+BWA Fasta Align 		Fasta 			.fastq
 Samtools SAM to BAM 		Sequence Alignment 	.sam
 Platypus Variant Calling 	Binary Alignment 	.bam
 
