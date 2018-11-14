@@ -112,7 +112,7 @@ If a certain tool fails even if the correct filetypes and paths are specified, t
 
 ## References:
 
-Chen S, Huang T, Zhou Y, Han Y, Xu M, Gu J. AfterQC: automatic filtering, trimming, error removing and quality control for fastq data. BMC bioinformatics. 2017;18(Suppl 3):80-.
+Chen S, Huang T, Zhou Y, Han Y, Xu M, Gu J. AfterQC: automatic filtering, trimming, error removing and quality control for fastq data. BMC bioinformatics. 2017;18(Suppl 3):80.
 
 Kevin Spiteri, Ramesh Sitaraman, and Daniel Sparacio. 2018. From Theory to Practice: Improving Bitrate Adaptation in the DASH Reference Player. In Proceedings of the 9th International Conference on Multimedia Systems. ACM.
 
